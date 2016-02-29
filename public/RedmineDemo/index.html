@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Redmine Reporting</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://redmine.micnguyen.com/stylesheets/themes/default/style.min.css" />
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/redmineDemo/jstree.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/redmineDemo/Chart.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/redmineDemo/app.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+     <div class="container" style="width: auto;">
+
+
+      <div class="row">
+        <div class="col-md-4 ">
+          <br/>
+          <a type="button" class="btn btn-success" href="http://redmine.micnguyen.com">Back to Redmine</a><br/>
+          <div id="loading" style="color:red"><b>Loading content... Please wait...</b></div>
+          <br/>
+      </div>
+        <div class="col-md-8 ">
+          <div id="myProject"><h3>Please select the project to display reports</h3></div><br/>
+          <div id="completeTitle"></div><br/>
+          <div id="showPercent"></div> <br/>
+          <div id="totalissue"></div><br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><h4>Project List</h4>
+          <div id="project_tree" class="demo jstree jstree-1 jstree-default"></div></div><br/>
+          <div class="col-md-8">
+           <div class="row">
+
+            <div class="col-md-6">
+              <div id="priorityTitle"></div><br/>
+              <div id="canvas-holder-priority">
+                <canvas id="chart-priority" width="300" height="300"/>
+              </div><br/>
+              <div id="priorityLabel"> </div><br/><br/>
+
+              <div id="trackTitle"></div><br/>
+              <div id="canvas-holder-track">
+                <canvas id="chart-track" width="300" height="300"/>
+              </div><br/>
+              <div id="trackLabel"> </div><br/><br/>
+
+
+            </div>
+
+
+            <div class="col-md-6">
+
+              <div id="statTitle"></div><br/>
+              <div id="canvas-holder-stat">
+                <canvas id="chart-stat" width="300" height="300"/>
+              </div><br/>
+              <div id="statLabel"> </div><br/><br/>
+
+              <div id="otherTitle"></div><br/>
+              <div style="color:red" id="duedateTitle"></div><br/>
+              <div id="showPercentOver"></div> <br/>
+              <br/>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tempData"></div>
+    <div id="tempDataIssue"></div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  </body>
+  </html>

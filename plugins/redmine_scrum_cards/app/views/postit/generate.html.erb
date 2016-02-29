@@ -1,0 +1,51 @@
+
+<%= stylesheet_link_tag('postit.css', :plugin => 'redmine_scrum_cards', :media => 'all') %>
+
+<% @date_formatter =  get_date_format() %>
+
+<%for @issue in @issues %>
+
+	<div class="post-it-view">
+		
+		<label class="id">#<%= @issue.id%></label>
+		
+		<label class="project">
+			<%= @issue.project.name %>
+			<label class="version">
+				<% @version = get_issue_version(@issue) %>
+				<%= @version.nil? ? '' : @version.name %>
+			</label>
+		</label>
+		
+		<label class="subject">
+			<%= truncate(@issue.subject, :length => 80, :separator => ' ') %>
+		</label>	
+			
+		<label class="priority">
+			<%= @issue.priority.nil? ? '' : @issue.priority.name %>
+		</label>
+		
+		<div class="left-corner">
+			<div class="box-corner">
+				<label class="assignee">
+					<%= @issue.assigned_to.nil? ? '' : @issue.assigned_to.firstname.chr.upcase + @issue.assigned_to.lastname.chr.upcase %>
+				</label>	
+			</div>
+			<div class="box-corner">
+				<label class="tester">				
+					<% @tester = get_issue_tester(@issue) %>
+					<%= @tester.nil? ? '' : @tester.firstname.chr.upcase + @tester.lastname.chr.upcase %>
+				</label>	
+			</div>			
+		</div>
+		
+		<div class="right-corner">
+			<label class="deadline">
+				<% @due_date = get_issue_due_date(@issue) %>
+				<%= @due_date.nil? ? '' : @due_date.strftime(@date_formatter) %>
+			</label>	
+		</div>
+		
+	</div>
+
+<% end %>

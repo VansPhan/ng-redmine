@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redmine">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular Redmine Demo</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body ng-controller="RedmineController">
+
+<div class="container">
+  <h1>Parent Projects</h1>
+  <div ng-repeat="parent in parents">
+    <hr>
+    <p>{{ parent.name }}</p>
+  </div>
+</div>
+
+<!-- Angular & JavaScripts -->
+  <script src="http://redmine.micnguyen.com/javascripts/angular.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angular-route.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/ui-bootstrap-tpls-1.2.1.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angular-resource.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angularDemo/app.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angularDemo/RedmineController.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angularDemo/services.js"></script>
+
+</body>
+</html>

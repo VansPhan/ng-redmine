@@ -1,0 +1,1 @@
+angular.module('redmine', ['ngRoute', 'ngResource', 'redmine-services']);
