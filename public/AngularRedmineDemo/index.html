@@ -26,7 +26,7 @@
   <uib-accordion>
   <uib-accordion-group heading="{{ parent.name }}" ng-repeat="parent in parents">
     <div ng-repeat="sub in subs">
-      <p ng-if="sub.parent.id == parent.id">
+      <p href="#" ng-if="sub.parent.id == parent.id">
         {{ sub.name }}
       </p>
     </div>
