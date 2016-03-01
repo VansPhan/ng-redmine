@@ -1,7 +1,7 @@
 angular.module('redmine')
 .controller('RedmineController', function($scope, project) {
   $scope.parents = [];
-  $scope.children = [];
+  $scope.subs = [];
   project.all()
   .success(function(data) {
     for (var i = 0; i < data.projects.length; i++) {
@@ -9,10 +9,10 @@ angular.module('redmine')
         $scope.parents.push(data.projects[i]);
       }
       else {
-        $scope.children.push(data.projects[i]);
+        $scope.subs.push(data.projects[i]);
       }
     }
     console.log($scope.parents);
-    console.log($scope.children);
+    console.log($scope.subs);
   });
 });

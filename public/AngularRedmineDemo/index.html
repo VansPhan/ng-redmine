@@ -7,27 +7,32 @@
   <title>Angular Redmine Demo</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-</head>
-<body ng-controller="RedmineController">
-
-<div class="container">
-  <h1>Parent Projects</h1>
-  <div ng-repeat="parent in parents">
-    <hr>
-    <p>{{ parent.name }}</p>
-  </div>
-</div>
+  <link rel="stylesheet" href="http://redmine.micnguyen.com/stylesheets/bootstrap.min.css">
 
 <!-- Angular & JavaScripts -->
   <script src="http://redmine.micnguyen.com/javascripts/angular.min.js"></script>
+  <script src="http://redmine.micnguyen.com/javascripts/angular-animate.min.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/angular-route.min.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/ui-bootstrap-tpls-1.2.1.min.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/angular-resource.min.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/angularDemo/app.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/angularDemo/RedmineController.js"></script>
   <script src="http://redmine.micnguyen.com/javascripts/angularDemo/services.js"></script>
+</head>
+<body ng-controller="RedmineController">
+
+<div class="container">
+  <h1>Projects</h1>
+  <uib-accordion>
+  <uib-accordion-group heading="{{ parent.name }}" ng-repeat="parent in parents">
+    <div ng-repeat="sub in subs">
+      <p ng-if="sub.parent.id == parent.id">
+        {{ sub.name }}
+      </p>
+    </div>
+  </uib-accordion-group>
+  </uib-accordion>
+</div>
 
 </body>
 </html>

@@ -1,1 +1,1 @@
-angular.module('redmine', ['ngRoute', 'ngResource', 'redmine-services']);
+angular.module('redmine', ['ngRoute', 'ngResource', 'redmine-services', 'ui.bootstrap', 'ngAnimate']);
