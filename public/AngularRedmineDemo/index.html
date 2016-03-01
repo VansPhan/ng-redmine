@@ -8,6 +8,8 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="http://redmine.micnguyen.com/stylesheets/bootstrap.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://redmine.micnguyen.com/stylesheets/angularDemo.css">
 
 <!-- Angular & JavaScripts -->
   <script src="http://redmine.micnguyen.com/javascripts/angular.min.js"></script>
@@ -24,9 +26,14 @@
 <div class="container">
   <h1>Projects</h1>
   <uib-accordion>
-  <uib-accordion-group heading="{{ parent.name }}" ng-repeat="parent in parents">
+  <uib-accordion-group ng-repeat="parent in parents">
+  <uib-accordion-heading>
+    {{ parent.name }}
+    <button ng-click="issues('lg')" type="button" class="btn btn-primary" style="float: right;padding: 1px 6px;margin-top: -3px;
+">Issues</button>
+  </uib-accordion-heading>
     <div ng-repeat="sub in subs">
-      <p href="#" ng-if="sub.parent.id == parent.id">
+      <p ng-if="sub.parent.id == parent.id">
         {{ sub.name }}
       </p>
     </div>
